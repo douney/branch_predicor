@@ -30,6 +30,7 @@ class PREDICTOR {
  private:
    uint32_t *table;   // table contenant les compteurs à saturation
    uint32_t pcmask;   // masque pour n'accéder qu'aux bits significatifs de PC
+   int historique;
 
  public:
    uint32_t nentries; // nombre d'entrées dans la table
@@ -38,10 +39,21 @@ class PREDICTOR {
    PREDICTOR(char *progname, int argc, char *argv[]);
 
    // The interface to the functions below CAN NOT be changed
-   bool GetPrediction(UINT64 PC);
-   void UpdatePredictor(UINT64 PC, OpType opType, bool resolveDir, bool predDir, UINT64 branchTarget);
-   void TrackOtherInst(UINT64 PC, OpType opType, bool branchDir, UINT64 branchTarget);
+  bool GetPrediction(UINT64 PC);
+  void UpdatePredictor(UINT64 PC, OpType opType, bool resolveDir, bool predDir, UINT64 branchTarget);
+  void TrackOtherInst(UINT64 PC, OpType opType, bool branchDir, UINT64 branchTarget);
+
+  bool GetPrediction0(UINT64 PC);
+  void UpdatePredictor0(UINT64 PC, OpType opType, bool resolveDir, bool predDir, UINT64 branchTarget);
+
+  bool GetPrediction1(UINT64 PC);
+  void UpdatePredictor1(UINT64 PC, OpType opType, bool resolveDir, bool predDir, UINT64 branchTarget);
+
+  bool GetPrediction2(UINT64 PC);
+  void UpdatePredictor2(UINT64 PC, OpType opType, bool resolveDir, bool predDir, UINT64 branchTarget);
 
    // Contestants can define their own functions below
 };
+
+
 #endif

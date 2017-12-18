@@ -2,7 +2,7 @@
 CP = cp
 FIG2DEV = fig2dev
 INKSCAPE= inkscape
-PDFLATEX = rubber --pdf
+PDFLATEX = pdflatex
 
 SCHEMA := $(wildcard *.fig) 
 DIAGRAM := $(wildcard *.svg) 

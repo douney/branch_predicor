@@ -7,10 +7,10 @@
 num_parallel_jobs=8
 
 # Paramètres que l'on cherche à faire varier
-count_sizes=($(seq 1 6))
+count_sizes=($(seq 1 3))
 array_sizes=(4 6 8 10 12 14 16)
 
-if test 0 -ne 0 ; then
+if test 1 -ne 0 ; then
    # Nombre de bits du compteur
    for i in ${count_sizes[*]} ; do
       # Taille du tableau
